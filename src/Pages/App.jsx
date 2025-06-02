@@ -14,6 +14,7 @@ import MovieList from "../components/Fragments/Movies/MovieList";
 import MovieDetail from "../components/Fragments/Movies/MovieDetail";
 import WatchList from "../components/Fragments/WatchList/WatchlistList";
 import WatchListDetail from "../components/Fragments/WatchList/WatchListDetail";
+import AppLayout from "../components/Layouts/AppLayout";
 
 function App() {
   const [tabWatchlist, setTabWatchlist] = useState(false);
@@ -84,7 +85,7 @@ function App() {
   }
 
   return (
-    <div className="flex flex-col items-center">
+    <AppLayout>
       <Header />
       <Search onSetSearch={setSearch} setTabWatchlist={setTabWatchlist} />
       <Tab tabWatchlist={tabWatchlist} onActivateWatchlist={setTabWatchlist} />
@@ -129,7 +130,7 @@ function App() {
           setOpenWatchListDetail={onCloseWatchListDetail}
         />
       )}
-    </div>
+    </AppLayout>
   );
 }
 
